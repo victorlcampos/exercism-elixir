@@ -13,7 +13,7 @@ defmodule Sublist do
     cond do
       a_length > length(b) ->
         :unequal
-      a === Enum.slice(b,0,a_length) ->
+      a === Enum.take(b, a_length) ->
         result
       true ->
         compare_lists(a, tl(b), a_length, result)
